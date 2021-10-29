@@ -12,3 +12,5 @@ https://github.com/cloudwego/netpoll
 https://github.com/overnote/over-golang
 
 github.com/orcaman/concurrent-map
+
+https://github.com/gorilla/websocket
