@@ -20,3 +20,5 @@ https://github.com/allegro/bigcache
 https://github.com/name5566/leaf
 
 https://github.com/Shopify/sarama
+
+https://github.com/confluentinc/confluent-kafka-go
