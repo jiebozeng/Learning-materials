@@ -33,6 +33,8 @@ https://github.com/kakuilan/kgo
 
 https://github.com/aceld/golang
 
+https://github.com/segmentio/kafka-go
+
 https://github.com/hunterhug/gorlock
 
 https://github.com/liangdas/mqant
