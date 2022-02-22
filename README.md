@@ -36,3 +36,5 @@ https://github.com/aceld/golang
 https://github.com/hunterhug/gorlock
 
 https://github.com/liangdas/mqant
+
+https://github.com/bwmarrin/snowflake
