@@ -56,3 +56,5 @@ https://github.com/rfyiamcool/grpcall
 https://github.com/funny/link
 
 https://github.com/duanhf2012/origin
+
+https://github.com/asynkron/protoactor-go
