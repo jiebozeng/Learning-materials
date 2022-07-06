@@ -34,3 +34,10 @@ crontab -e
 |    +-------------------- 小时 (0 - 23)
 +------------------------- 分钟 (0 - 59)
 
+重启 
+service crond restart
+
+重载
+service crond reload
+
+
