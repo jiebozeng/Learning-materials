@@ -16,11 +16,14 @@ echo 3 > /proc/sys/vm/drop_caches
 
 crontab 计划任务
 
-# 打开crontab 任务编辑
+打开crontab 任务编辑
+
 crontab -e 
-# 添加计划任务 
+
+添加计划任务 
+
 * * * * * date >> /tmp/time.txt
-# 按 ctrl+x 然后 按y 再按回车键
+按 ctrl+x 然后 按y 再按回车键
 
 *    *    *    *    *
 -    -    -    -    -
