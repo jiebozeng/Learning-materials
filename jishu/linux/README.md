@@ -23,6 +23,7 @@ crontab -e
 添加计划任务 
 
 * * * * * date >> /tmp/time.txt
+
 按 ctrl+x 然后 按y 再按回车键
 
 *    *    *    *    *
