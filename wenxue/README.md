@@ -4,4 +4,4 @@
 
 孙武兵法 https://lincome.gitbooks.io/szbf/content/ https://github.com/lincome/szbf
 
-资治通鉴 https://github.com/gosaintmrc/zztj
+资治通鉴 https://github.com/gosaintmrc/zztj http://www.ewenyan.com/contents/more/zztj.html
