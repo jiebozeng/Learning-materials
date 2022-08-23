@@ -1,0 +1,44 @@
+
+//不在好友中、创建时间附近
+func GetRolesNearCreateTime(ctx context.Context, createTime int64, num int32, val interface{}, notInIds []string) error {
+	tableName := define.TBLRealRole
+	addValue := make([]interface{}, 2)
+	addValue[0] = "$createTime"
+	addValue[1] = -createTime
+
+	nids := bson.A{}
+	for i := 0; i < len(notInIds); i++ {
+		nids = append(nids, notInIds[i])
+	}
+
+	match := bson.D{
+		{"$match", bson.M{
+			"eid": bson.M{"$nin": nids},
+		},
+		},
+	}
+	project := bson.D{
+		{
+			"$project", bson.M{
+				"eid": 1,
+				"createTime": bson.M{
+					"$abs": bson.M{"$add": addValue},
+				},
+			},
+		},
+	}
+	sort := bson.D{
+		{
+			"$sort", bson.M{
+				"createTime": 1,
+			},
+		},
+	}
+	limit := bson.D{
+		{
+			"$limit", num,
+		},
+	}
+
+	return mongodb.DBAggregateFindAll(ctx, tableName, mongo.Pipeline{match, project, sort, limit}, val)
+}
