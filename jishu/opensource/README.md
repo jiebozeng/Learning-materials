@@ -65,3 +65,5 @@ https://github.com/dunwu/db-tutorial 数据库教程
 https://github.com/bobohume/gonet gonet 游戏服务器架构。
 
 https://github.com/gonet2 游戏服务器
+
+https://github.com/JianRuiSky/ToolGood.Words/tree/master/golang 敏感词过滤
