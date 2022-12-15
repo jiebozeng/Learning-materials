@@ -5,3 +5,5 @@
 孙武兵法 https://lincome.gitbooks.io/szbf/content/ https://github.com/lincome/szbf
 
 资治通鉴 https://github.com/gosaintmrc/zztj http://www.ewenyan.com/contents/more/zztj.html
+
+世界名著 https://github.com/Vast-As-A-Sea/Chinese-translation-of-world-academic-masterpieces
