@@ -1,1 +1,2 @@
-收藏一些学习资料
+1、My resume
+2、Collect some learning materials
