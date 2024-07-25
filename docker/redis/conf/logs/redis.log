@@ -1,0 +1,222 @@
+1:C 20 Dec 2023 10:12:51.426 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 20 Dec 2023 10:12:51.428 # Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 20 Dec 2023 10:12:51.430 # Configuration loaded
+1:M 20 Dec 2023 10:12:51.434 * monotonic clock: POSIX clock_gettime
+1:M 20 Dec 2023 10:12:51.438 * Running mode=standalone, port=6379.
+1:M 20 Dec 2023 10:12:51.441 # Server initialized
+1:M 20 Dec 2023 10:12:51.444 * Ready to accept connections
+1:M 20 Dec 2023 10:27:52.073 * 1 changes in 900 seconds. Saving...
+1:M 20 Dec 2023 10:27:52.085 * Background saving started by pid 22
+22:C 20 Dec 2023 10:27:52.097 * DB saved on disk
+22:C 20 Dec 2023 10:27:52.100 * RDB: 0 MB of memory used by copy-on-write
+1:M 20 Dec 2023 10:27:52.193 * Background saving terminated with success
+1:signal-handler (1703069078) Received SIGTERM scheduling shutdown...
+1:M 20 Dec 2023 10:44:38.717 # User requested shutdown...
+1:M 20 Dec 2023 10:44:38.720 * Saving the final RDB snapshot before exiting.
+1:M 20 Dec 2023 10:44:38.731 * DB saved on disk
+1:M 20 Dec 2023 10:44:38.734 # Redis is now ready to exit, bye bye...
+1:C 20 Dec 2023 10:45:26.990 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 20 Dec 2023 10:45:26.994 # Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 20 Dec 2023 10:45:26.996 # Configuration loaded
+1:M 20 Dec 2023 10:45:26.999 * monotonic clock: POSIX clock_gettime
+1:M 20 Dec 2023 10:45:27.005 * Running mode=standalone, port=6379.
+1:M 20 Dec 2023 10:45:27.007 # Server initialized
+1:M 20 Dec 2023 10:45:27.013 * Loading RDB produced by version 6.2.6
+1:M 20 Dec 2023 10:45:27.015 * RDB age 49 seconds
+1:M 20 Dec 2023 10:45:27.018 * RDB memory usage when created 0.77 Mb
+1:M 20 Dec 2023 10:45:27.020 # Done loading RDB, keys loaded: 1, keys expired: 0.
+1:M 20 Dec 2023 10:45:27.023 * DB loaded from disk: 0.012 seconds
+1:M 20 Dec 2023 10:45:27.027 * Ready to accept connections
+11:C 20 Dec 2023 10:47:07.944 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 20 Dec 2023 10:47:07.947 # Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 20 Dec 2023 10:47:07.949 # Configuration loaded
+1:M 20 Dec 2023 10:47:07.952 * monotonic clock: POSIX clock_gettime
+1:M 20 Dec 2023 10:47:07.958 * Running mode=standalone, port=6379.
+1:M 20 Dec 2023 10:47:07.960 # Server initialized
+1:M 20 Dec 2023 10:47:07.962 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 20 Dec 2023 10:47:07.966 * Loading RDB produced by version 6.2.6
+1:M 20 Dec 2023 10:47:07.968 * RDB age 149 seconds
+1:M 20 Dec 2023 10:47:07.970 * RDB memory usage when created 0.77 Mb
+1:M 20 Dec 2023 10:47:07.972 # Done loading RDB, keys loaded: 1, keys expired: 0.
+1:M 20 Dec 2023 10:47:07.974 * DB loaded from disk: 0.009 seconds
+1:M 20 Dec 2023 10:47:07.976 * Ready to accept connections
+1:signal-handler (1703069236) Received SIGTERM scheduling shutdown...
+1:M 20 Dec 2023 10:47:16.520 # User requested shutdown...
+1:M 20 Dec 2023 10:47:16.521 * Saving the final RDB snapshot before exiting.
+1:M 20 Dec 2023 10:47:16.524 * DB saved on disk
+1:M 20 Dec 2023 10:47:16.525 # Redis is now ready to exit, bye bye...
+1:C 20 Dec 2023 10:47:24.637 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 20 Dec 2023 10:47:24.640 # Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 20 Dec 2023 10:47:24.643 # Configuration loaded
+1:M 20 Dec 2023 10:47:24.645 * monotonic clock: POSIX clock_gettime
+1:M 20 Dec 2023 10:47:24.650 * Running mode=standalone, port=6379.
+1:M 20 Dec 2023 10:47:24.653 # Server initialized
+1:M 20 Dec 2023 10:47:24.654 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 20 Dec 2023 10:47:24.657 * Loading RDB produced by version 6.2.6
+1:M 20 Dec 2023 10:47:24.659 * RDB age 8 seconds
+1:M 20 Dec 2023 10:47:24.661 * RDB memory usage when created 0.77 Mb
+1:M 20 Dec 2023 10:47:24.663 # Done loading RDB, keys loaded: 1, keys expired: 0.
+1:M 20 Dec 2023 10:47:24.665 * DB loaded from disk: 0.008 seconds
+1:M 20 Dec 2023 10:47:24.667 * Ready to accept connections
+1:signal-handler (1703069347) Received SIGTERM scheduling shutdown...
+1:M 20 Dec 2023 10:49:08.044 # User requested shutdown...
+1:M 20 Dec 2023 10:49:08.045 * Saving the final RDB snapshot before exiting.
+1:M 20 Dec 2023 10:49:08.048 * DB saved on disk
+1:M 20 Dec 2023 10:49:08.049 # Redis is now ready to exit, bye bye...
+1:C 20 Dec 2023 10:49:15.052 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 20 Dec 2023 10:49:15.052 # Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 20 Dec 2023 10:49:15.053 # Configuration loaded
+1:M 20 Dec 2023 10:49:15.055 * monotonic clock: POSIX clock_gettime
+1:M 20 Dec 2023 10:49:15.057 * Running mode=standalone, port=6379.
+1:M 20 Dec 2023 10:49:15.059 # Server initialized
+1:M 20 Dec 2023 10:49:15.060 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 20 Dec 2023 10:49:15.063 * Loading RDB produced by version 6.2.6
+1:M 20 Dec 2023 10:49:15.066 * RDB age 7 seconds
+1:M 20 Dec 2023 10:49:15.068 * RDB memory usage when created 0.77 Mb
+1:M 20 Dec 2023 10:49:15.073 # Done loading RDB, keys loaded: 1, keys expired: 0.
+1:M 20 Dec 2023 10:49:15.076 * DB loaded from disk: 0.012 seconds
+1:M 20 Dec 2023 10:49:15.078 * Ready to accept connections
+1:signal-handler (1703083160) Received SIGTERM scheduling shutdown...
+1:M 20 Dec 2023 14:39:20.481 # User requested shutdown...
+1:M 20 Dec 2023 14:39:20.485 * Saving the final RDB snapshot before exiting.
+1:M 20 Dec 2023 14:39:20.490 * DB saved on disk
+1:M 20 Dec 2023 14:39:20.492 # Redis is now ready to exit, bye bye...
+1:C 28 Dec 2023 06:02:13.856 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 28 Dec 2023 06:02:13.857 # Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 28 Dec 2023 06:02:13.858 # Configuration loaded
+1:M 28 Dec 2023 06:02:13.860 * monotonic clock: POSIX clock_gettime
+1:M 28 Dec 2023 06:02:13.863 * Running mode=standalone, port=6379.
+1:M 28 Dec 2023 06:02:13.864 # Server initialized
+1:M 28 Dec 2023 06:02:13.866 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 28 Dec 2023 06:02:13.868 * Loading RDB produced by version 6.2.6
+1:M 28 Dec 2023 06:02:13.869 * RDB age 660173 seconds
+1:M 28 Dec 2023 06:02:13.869 * RDB memory usage when created 0.77 Mb
+1:M 28 Dec 2023 06:02:13.870 # Done loading RDB, keys loaded: 1, keys expired: 0.
+1:M 28 Dec 2023 06:02:13.871 * DB loaded from disk: 0.004 seconds
+1:M 28 Dec 2023 06:02:13.872 * Ready to accept connections
+1:signal-handler (1704095802) Received SIGTERM scheduling shutdown...
+1:M 01 Jan 2024 07:56:42.132 # User requested shutdown...
+1:M 01 Jan 2024 07:56:42.139 * Saving the final RDB snapshot before exiting.
+1:M 01 Jan 2024 07:56:42.148 * DB saved on disk
+1:M 01 Jan 2024 07:56:42.150 # Redis is now ready to exit, bye bye...
+1:C 01 Jan 2024 09:48:07.279 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 01 Jan 2024 09:48:07.279 # Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 01 Jan 2024 09:48:07.280 # Configuration loaded
+1:M 01 Jan 2024 09:48:07.281 * monotonic clock: POSIX clock_gettime
+1:M 01 Jan 2024 09:48:07.284 * Running mode=standalone, port=6379.
+1:M 01 Jan 2024 09:48:07.285 # Server initialized
+1:M 01 Jan 2024 09:48:07.286 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 01 Jan 2024 09:48:07.288 * Loading RDB produced by version 6.2.6
+1:M 01 Jan 2024 09:48:07.289 * RDB age 6685 seconds
+1:M 01 Jan 2024 09:48:07.290 * RDB memory usage when created 0.77 Mb
+1:M 01 Jan 2024 09:48:07.291 # Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 01 Jan 2024 09:48:07.292 * DB loaded from disk: 0.005 seconds
+1:M 01 Jan 2024 09:48:07.293 * Ready to accept connections
+1:signal-handler (1704112087) Received SIGTERM scheduling shutdown...
+1:M 01 Jan 2024 12:28:07.687 # User requested shutdown...
+1:M 01 Jan 2024 12:28:07.687 * Saving the final RDB snapshot before exiting.
+1:M 01 Jan 2024 12:28:07.689 * DB saved on disk
+1:M 01 Jan 2024 12:28:07.689 # Redis is now ready to exit, bye bye...
+1:C 01 Jan 2024 15:48:12.701 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 01 Jan 2024 15:48:12.703 # Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 01 Jan 2024 15:48:12.704 # Configuration loaded
+1:M 01 Jan 2024 15:48:12.706 * monotonic clock: POSIX clock_gettime
+1:M 01 Jan 2024 15:48:12.708 * Running mode=standalone, port=6379.
+1:M 01 Jan 2024 15:48:12.710 # Server initialized
+1:M 01 Jan 2024 15:48:12.710 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 01 Jan 2024 15:48:12.712 * Loading RDB produced by version 6.2.6
+1:M 01 Jan 2024 15:48:12.713 * RDB age 12005 seconds
+1:M 01 Jan 2024 15:48:12.714 * RDB memory usage when created 0.77 Mb
+1:M 01 Jan 2024 15:48:12.715 # Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 01 Jan 2024 15:48:12.716 * DB loaded from disk: 0.005 seconds
+1:M 01 Jan 2024 15:48:12.717 * Ready to accept connections
+1:C 12 Jan 2024 13:54:45.916 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 12 Jan 2024 13:54:45.917 # Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 12 Jan 2024 13:54:45.918 # Configuration loaded
+1:M 12 Jan 2024 13:54:45.919 * monotonic clock: POSIX clock_gettime
+1:M 12 Jan 2024 13:54:45.920 * Running mode=standalone, port=6379.
+1:M 12 Jan 2024 13:54:45.920 # Server initialized
+1:M 12 Jan 2024 13:54:45.921 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 12 Jan 2024 13:54:45.923 * Loading RDB produced by version 6.2.6
+1:M 12 Jan 2024 13:54:45.924 * RDB age 955598 seconds
+1:M 12 Jan 2024 13:54:45.924 * RDB memory usage when created 0.77 Mb
+1:M 12 Jan 2024 13:54:45.925 # Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 12 Jan 2024 13:54:45.926 * DB loaded from disk: 0.004 seconds
+1:M 12 Jan 2024 13:54:45.926 * Ready to accept connections
+1:M 20 Jan 2024 07:38:49.049 * 1 changes in 900 seconds. Saving...
+1:M 20 Jan 2024 07:38:49.079 * Background saving started by pid 18
+18:C 20 Jan 2024 07:38:49.177 * DB saved on disk
+18:C 20 Jan 2024 07:38:49.180 * RDB: 0 MB of memory used by copy-on-write
+1:M 20 Jan 2024 07:38:49.282 * Background saving terminated with success
+1:M 20 Jan 2024 07:53:50.046 * 1 changes in 900 seconds. Saving...
+1:M 20 Jan 2024 07:53:50.049 * Background saving started by pid 19
+19:C 20 Jan 2024 07:53:50.058 * DB saved on disk
+19:C 20 Jan 2024 07:53:50.059 * RDB: 0 MB of memory used by copy-on-write
+1:M 20 Jan 2024 07:53:50.152 * Background saving terminated with success
+1:C 07 Mar 2024 01:00:20.563 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 07 Mar 2024 01:00:20.564 # Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 07 Mar 2024 01:00:20.566 # Configuration loaded
+1:M 07 Mar 2024 01:00:20.568 * monotonic clock: POSIX clock_gettime
+1:M 07 Mar 2024 01:00:20.570 * Running mode=standalone, port=6379.
+1:M 07 Mar 2024 01:00:20.571 # Server initialized
+1:M 07 Mar 2024 01:00:20.572 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 07 Mar 2024 01:00:20.574 * Loading RDB produced by version 6.2.6
+1:M 07 Mar 2024 01:00:20.575 * RDB age 4035990 seconds
+1:M 07 Mar 2024 01:00:20.577 * RDB memory usage when created 0.77 Mb
+1:M 07 Mar 2024 01:00:20.580 # Done loading RDB, keys loaded: 0, keys expired: 1.
+1:M 07 Mar 2024 01:00:20.582 * DB loaded from disk: 0.009 seconds
+1:M 07 Mar 2024 01:00:20.583 * Ready to accept connections
+1:C 11 Mar 2024 01:54:22.552 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 11 Mar 2024 01:54:22.554 # Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 11 Mar 2024 01:54:22.556 # Configuration loaded
+1:M 11 Mar 2024 01:54:22.558 * monotonic clock: POSIX clock_gettime
+1:M 11 Mar 2024 01:54:22.560 * Running mode=standalone, port=6379.
+1:M 11 Mar 2024 01:54:22.561 # Server initialized
+1:M 11 Mar 2024 01:54:22.562 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 11 Mar 2024 01:54:22.565 * Loading RDB produced by version 6.2.6
+1:M 11 Mar 2024 01:54:22.567 * RDB age 4384832 seconds
+1:M 11 Mar 2024 01:54:22.569 * RDB memory usage when created 0.77 Mb
+1:M 11 Mar 2024 01:54:22.574 # Done loading RDB, keys loaded: 0, keys expired: 1.
+1:M 11 Mar 2024 01:54:22.575 * DB loaded from disk: 0.010 seconds
+1:M 11 Mar 2024 01:54:22.575 * Ready to accept connections
+1:signal-handler (1710216378) Received SIGTERM scheduling shutdown...
+1:M 12 Mar 2024 04:06:18.165 # User requested shutdown...
+1:M 12 Mar 2024 04:06:18.166 * Saving the final RDB snapshot before exiting.
+1:M 12 Mar 2024 04:06:18.171 * DB saved on disk
+1:M 12 Mar 2024 04:06:18.175 # Redis is now ready to exit, bye bye...
+1:C 12 Mar 2024 06:20:34.565 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 12 Mar 2024 06:20:34.566 # Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 12 Mar 2024 06:20:34.568 # Configuration loaded
+1:M 12 Mar 2024 06:20:34.569 * monotonic clock: POSIX clock_gettime
+1:M 12 Mar 2024 06:20:34.571 * Running mode=standalone, port=6379.
+1:M 12 Mar 2024 06:20:34.572 # Server initialized
+1:M 12 Mar 2024 06:20:34.572 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 12 Mar 2024 06:20:34.574 * Loading RDB produced by version 6.2.6
+1:M 12 Mar 2024 06:20:34.575 * RDB age 8056 seconds
+1:M 12 Mar 2024 06:20:34.576 * RDB memory usage when created 0.77 Mb
+1:M 12 Mar 2024 06:20:34.576 # Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 12 Mar 2024 06:20:34.577 * DB loaded from disk: 0.004 seconds
+1:M 12 Mar 2024 06:20:34.578 * Ready to accept connections
+1:signal-handler (1710237348) Received SIGTERM scheduling shutdown...
+1:M 12 Mar 2024 09:55:48.242 # User requested shutdown...
+1:M 12 Mar 2024 09:55:48.247 * Saving the final RDB snapshot before exiting.
+1:M 12 Mar 2024 09:55:48.251 * DB saved on disk
+1:M 12 Mar 2024 09:55:48.252 # Redis is now ready to exit, bye bye...
+1:C 13 Mar 2024 01:01:08.060 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 13 Mar 2024 01:01:08.061 # Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 13 Mar 2024 01:01:08.062 # Configuration loaded
+1:M 13 Mar 2024 01:01:08.064 * monotonic clock: POSIX clock_gettime
+1:M 13 Mar 2024 01:01:08.067 * Running mode=standalone, port=6379.
+1:M 13 Mar 2024 01:01:08.068 # Server initialized
+1:M 13 Mar 2024 01:01:08.069 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:M 13 Mar 2024 01:01:08.071 * Loading RDB produced by version 6.2.6
+1:M 13 Mar 2024 01:01:08.072 * RDB age 54320 seconds
+1:M 13 Mar 2024 01:01:08.073 * RDB memory usage when created 0.77 Mb
+1:M 13 Mar 2024 01:01:08.075 # Done loading RDB, keys loaded: 0, keys expired: 0.
+1:M 13 Mar 2024 01:01:08.077 * DB loaded from disk: 0.006 seconds
+1:M 13 Mar 2024 01:01:08.077 * Ready to accept connections
+1:signal-handler (1710470136) Received SIGTERM scheduling shutdown...
+1:M 15 Mar 2024 02:35:36.889 # User requested shutdown...
+1:M 15 Mar 2024 02:35:36.901 * Saving the final RDB snapshot before exiting.
+1:M 15 Mar 2024 02:35:36.932 * DB saved on disk
+1:M 15 Mar 2024 02:35:36.933 # Redis is now ready to exit, bye bye...

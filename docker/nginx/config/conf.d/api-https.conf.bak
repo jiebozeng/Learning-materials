@@ -1,0 +1,24 @@
+# upstream 块定义
+upstream backend {
+    server short.gzpxm.cn:9004;
+    server short.gzpxm.cn:9005;
+    # 如果后端服务器在其他机器上，替换为实际的 IP 地址和端口号
+}
+
+# 配置 HTTPS 服务器
+server {
+    listen 9003 ssl;  # 监听 9003 端口并启用 SSL/TLS
+    server_name short.gzpxm.cn;
+
+    ssl_certificate /etc/nginx/ssl/short.gzpxm.cn.pem;
+    ssl_certificate_key /etc/nginx/ssl/short.gzpxm.cn.key;
+
+    location / {
+        # 转发到后端服务器组
+        proxy_pass https://backend;
+        # 设置负载均衡策略，这里使用默认的轮询策略
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}

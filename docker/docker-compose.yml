@@ -1,0 +1,443 @@
+version: '3.1'
+services:
+
+
+  gitea:
+    image: gitea/gitea:1.20.1
+    container_name: gitea
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+    restart: always
+    networks:
+      backend:
+        ipv4_address: 172.29.0.10
+    volumes:
+      - ./gitea:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "8080:3000"
+      - "222:22"
+
+
+  mysql8.0:
+    #构建mysql镜像
+    image: registry.cn-guangzhou.aliyuncs.com/go-deploy/mysql:8.0
+    container_name: mysql8 # 容器名
+    command:
+      --default-authentication-plugin=mysql_native_password
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_general_ci
+      --explicit_defaults_for_timestamp=true
+      --lower_case_table_names=1
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 3b872161b27e31d0 #root管理员用户密码
+      TZ: Asia/Shanghai
+    ports:
+      - '3306:3306'  #host物理直接映射端口为6606
+    networks:
+      backend:
+        ipv4_address: 172.29.0.20
+    volumes:
+      - ./mysql8.0/data/data:/var/lib/mysql
+      - ./mysql8.0/data/config/mysql/my.cnf:/etc/my.cnf
+
+
+
+
+
+
+
+
+  mysql5.7:
+    #构建mysql镜像
+    image: registry.cn-guangzhou.aliyuncs.com/go-deploy/mysql:5.7
+    container_name: mysql5.7 # 容器名
+    command:
+      --default-authentication-plugin=mysql_native_password
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_general_ci
+      --explicit_defaults_for_timestamp=true
+      --lower_case_table_names=1
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 3b872161b27e31d0 #root管理员用户密码
+      TZ: Asia/Shanghai
+    ports:
+      - '3317:3306'  #host物理直接映射端口为6606
+    networks:
+      backend:
+        ipv4_address: 172.29.0.4
+    volumes:
+      - ./mysql5.7/data/data:/var/lib/mysql
+      - ./mysql5.7/data/config/mysql/my.cnf:/etc/my.cnf
+
+
+  pgsql:
+    container_name: postgres
+    image: postgres:11.15
+    privileged: true
+    ports:
+      - 15432:5432
+    environment:
+      - POSTGRES_PASSWORD=password # 账号: postgres
+      - TZ=Asia/Shanghai
+    restart: always
+    volumes:
+      - ./pgsql/data:/var/lib/postgresql/data/
+    networks:
+      backend:
+        ipv4_address: 172.29.0.11
+
+
+
+
+  elasticsearch:
+    image: registry.cn-guangzhou.aliyuncs.com/go-deploy/elasticsearch:7.14.1      # 原镜像`elasticsearch:7.14.1`
+    container_name: elasticsearch             # 容器名为'elasticsearch'
+    restart: unless-stopped                           # 指定容器退出后的重启策略为始终重启，但是不考虑在Docker守护进程启动时就已经停止了的容器
+    volumes: # 数据卷挂载路径设置,将本机目录映射到容器目录
+      - "./es-kibana/es/data:/usr/share/elasticsearch/data"
+      - "./es-kibana/es/logs:/usr/share/elasticsearch/logs"
+      - "./es-kibana/es/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml"
+      - "./es-kibana/es/plugins/:/usr/share/elasticsearch/plugins"
+      #- "./es/config/jvm.options:/usr/share/elasticsearch/config/jvm.options"
+    environment: # 设置环境变量,相当于docker run命令中的-e
+      TZ: Asia/Shanghai
+      LANG: en_US.UTF-8
+      discovery.type: single-node
+      ES_JAVA_OPTS: "-Xmx512m -Xms512m"
+      #ELASTIC_PASSWORD: "123456" # elastic账号密码
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      backend:
+        ipv4_address: 172.29.0.5
+
+  kibana:
+    image: registry.cn-guangzhou.aliyuncs.com/go-deploy/kibana:7.14.1       # 原镜像`kibana:7.14.1`
+    container_name: kibana
+    restart: unless-stopped
+    volumes:
+      - "./es-kibana/kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml"
+      - "./es-kibana/kibana/logs:/usr/share/kibana/logs"
+    environment:
+      TZ: Asia/Shanghai    # 更改容器时区为 CST（默认为UTC）
+      LANG: en_US.UTF-8
+      ELASTICSEARCH_HOSTS: http://172.29.0.5:9200
+      ELASTICSEARCH_URL: http://172.29.0.5:9200
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    links:
+      - elasticsearch
+    networks:
+      backend:
+
+  elasticsearch-head:
+    image: registry.cn-guangzhou.aliyuncs.com/go-deploy/elasticsearch-head:6-alpine
+    container_name: elasticsearch-head
+    restart: unless-stopped
+    environment:
+      TZ: 'Asia/Shanghai'
+    ports:
+      - '9100:9100'
+    networks:
+      backend:
+
+
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:7.14.0
+    volumes:
+      - ./filebeat/log:/var/log
+      - ./filebeat/config/filebeat.yml:/usr/share/filebeat/filebeat.yml
+    networks:
+      - backend
+    restart: always
+
+
+
+
+
+
+
+
+
+
+  #consul容器
+  consul1:
+    image: consul:latest
+    container_name: consul_node1
+    command: agent -server -bind=0.0.0.0 -bootstrap -ui -client=0.0.0.0
+    restart: always
+    networks:
+      backend:
+        ipv4_address: 172.29.0.6
+    ports:
+      - "8500:8500"
+    volumes:
+      - ./consul/deploy/consul_config.json:/consul/config/consul_config.json
+
+  nginx:
+    restart: always
+    image: registry.cn-guangzhou.aliyuncs.com/go-deploy/nginx:1.21.5
+    container_name: nginx
+    ports:
+      - "9000:9000" ##这个是给前端调用api接口访问的 切记 如果这里监听的是80端口，那么在配置文件中conf.d/test.conf中的 listen 监听就是80
+      - "80:80" ## 注意这个端口是给前端网页访问的域名用的。
+      - "443:443" ## https使用的端口
+    networks:
+      backend:
+        ipv4_address: 172.29.0.7
+    volumes:
+      - ./nginx/config/conf.d/:/etc/nginx/conf.d
+      - ./nginx/config/nginx_conf/nginx.conf/:/etc/nginx/nginx.conf
+      - ./nginx/config/html:/usr/share/nginx/html
+      - ./nginx/config/logs:/var/log/nginx
+      - ./nginx/config/ssl:/etc/nginx/ssl
+
+
+
+
+
+  redis:
+    image: registry.cn-guangzhou.aliyuncs.com/go-deploy/redis:6.2.6
+    container_name: redis6
+    restart: always
+    networks:
+      backend:
+        ipv4_address: 172.29.0.8
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis/conf/redis.conf:/etc/redis/redis.conf:ro
+      - ./redis/conf/data:/data:rw
+      - ./redis/conf/logs:/logs:rw
+    command: ["redis-server","/etc/redis/redis.conf"]
+
+## 集群 emqx1
+  emqx1:
+    image: emqx:5.6.1
+    container_name: emqx1
+    restart: always
+    environment:
+      - "EMQX_NODE_NAME=emqx@172.29.0.18"
+      - "EMQX_CLUSTER__DISCOVERY_STRATEGY=static"
+      - "EMQX_CLUSTER__STATIC__SEEDS=[emqx@172.29.0.18,emqx@172.29.0.19]"
+    healthcheck:
+      test: ["CMD", "/opt/emqx/bin/emqx", "ctl", "status"]
+      interval: 5s
+      timeout: 25s
+      retries: 5
+    networks:
+      backend:
+        ipv4_address: 172.29.0.18
+    ports:
+      - 1883:1883
+      - 8083:8083
+      - 8084:8084
+      - 8883:8883
+      - 18083:18083
+    # volumes:
+    #   - $PWD/emqx1_data:/opt/emqx/data
+
+  ## 集群 emqx2
+  emqx2:
+    image: emqx:5.6.1
+    container_name: emqx2
+    restart: always
+    environment:
+      - "EMQX_NODE_NAME=emqx@172.29.0.19"
+      - "EMQX_CLUSTER__DISCOVERY_STRATEGY=static"
+      - "EMQX_CLUSTER__STATIC__SEEDS=[emqx@172.29.0.18,emqx@172.29.0.19]"
+    healthcheck:
+      test: ["CMD", "/opt/emqx/bin/emqx", "ctl", "status"]
+      interval: 5s
+      timeout: 25s
+      retries: 5
+    networks:
+      backend:
+        ipv4_address: 172.29.0.19
+    # volumes:
+    #   - $PWD/emqx2_data:/opt/emqx/data
+
+
+  yapi-mongo:
+    image: mongo:latest
+    # 容器名称
+    container_name: standalone-mongo
+    #挂载 宿主机路径:容器路劲
+    volumes:
+      - ./yapi/data/mongo:/data/db
+    restart: always
+    environment:
+      #MongoDB账户
+      MONGO_INITDB_ROOT_USERNAME: root
+      #MongoDB密码
+      MONGO_INITDB_ROOT_PASSWORD: xiaoxin5201#2@%
+    expose:
+      - 27017
+
+  ## jayfong/yapi:1.9.1
+  yapi:
+    image: liuqingzheng/yapi
+    # 容器名称
+    container_name: standalone-yapi
+    ports:
+      - "3000:3000"
+    environment:
+      #自定义账户 注意只能是邮箱或正常账号 如 xxx.@qq.com 、 account
+      YAPI_ADMIN_ACCOUNT: 77299007@qq.com
+      # 自定义账户密码
+      YAPI_ADMIN_PASSWORD: ludo
+      YAPI_CLOSE_REGISTER: 'true'
+      # yapi MongoDB服务名称
+      YAPI_DB_SERVERNAME: yapi-mongo
+      # yapi MongoDB端口号
+      YAPI_DB_PORT: 27017
+      # yapi MongoDB数据库名称
+      YAPI_DB_DATABASE: yapi
+      # yapi MongoDB账户
+      YAPI_DB_USER: root
+      # yapi MongoDB密码
+      YAPI_DB_PASS: xiaoxin5201#2@%
+      # yapi MongoDB权限
+      YAPI_DB_AUTH_SOURCE: admin
+      YAPI_MAIL_ENABLE: 'false'
+      YAPI_LDAP_LOGIN_ENABLE: 'false'
+    depends_on:
+      - yapi-mongo
+    restart: always
+
+
+  #asynqmon asynq延迟队列、定时队列的webui
+  asynq-ui:
+    image: hibiken/asynqmon:latest
+    container_name:  asynq-ui
+    ports:
+      - "8980:8080"
+    command:
+      - '--redis-addr=172.29.0.8:6379'
+      - '--redis-password=123456789'
+      - '--redis-db=2'
+    restart: always
+    networks:
+      backend:
+        ipv4_address: 172.29.0.9
+
+#    depends_on:
+#      - redis
+
+
+#禅道
+  zentao:
+    image: registry.cn-guangzhou.aliyuncs.com/go-deploy/zentao:latest
+    restart: always
+    container_name: zentao
+    environment:
+      MYSQL_ROOT_PASSWORD: zendao@biking2023
+    ports:
+      - 18088:80
+    volumes:
+      - ./zentao/app:/app/zentaopms
+      - ./zentao/data:/opt/zbox/data/mysql
+## 访问: http://110.41.53.79:18088/ 即可
+
+
+
+
+
+
+
+  zookeeper:
+    image: 'bitnami/zookeeper:latest'
+    container_name: 'small-zookeeper'
+    restart: always
+    ports:
+      - '2181:2181'
+    environment:
+      # 匿名登录--必须开启
+      - ALLOW_ANONYMOUS_LOGIN=yes
+  #volumes:
+  #- ./zookeeper:/bitnami/zookeeper
+  # 该镜像具体配置参考 https://github.com/bitnami/bitnami-docker-kafka/blob/master/README.md
+
+
+
+  kafka:
+    image: 'bitnami/kafka:2.8.0'
+    container_name: 'small-kafka'
+    restart: always
+    ports:
+      - '9092:9092'
+      - '9999:9095'
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092
+      # 客户端访问地址，更换成自己的外网服务器地址
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://8.133.155.139:9092
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      # 允许使用PLAINTEXT协议(镜像中默认为关闭,需要手动开启)
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      # 关闭自动创建 topic 功能
+      - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
+      # 全局消息过期时间 6 小时(测试时可以设置短一点)
+      - KAFKA_CFG_LOG_RETENTION_HOURS=6
+      # 开启JMX监控
+      # - JMX_PORT=9999
+    #volumes:
+    #- ./kafka:/bitnami/kafka
+    depends_on:
+      - zookeeper
+
+
+
+  # Web 管理界面 另外也可以用exporter+prometheus+grafana的方式来监控 https://github.com/danielqsj/kafka_exporter
+  kafka_manager:
+    image: 'hlebalbau/kafka-manager:latest'
+    restart: always
+    ports:
+      - "9000:9000"
+    environment:
+      ZK_HOSTS: "zookeeper:2181"
+      APPLICATION_SECRET: letmein
+    depends_on:
+      - zookeeper
+      - kafka
+
+
+
+ #这玩意还要去canal目录下修改example配置文件中的数据库账号和密码的.
+  canal-server:
+    image: canal/canal-server:v1.1.7
+    container_name: canal-server
+    restart: always
+    ports:
+      - "11111:11111"
+    networks:
+      backend:
+        ipv4_address: 172.29.0.31
+    volumes:
+      - ./canal/example/:/home/admin/canal-server/conf/example/
+      - ./canal/canal-server-logs/:/home/admin/canal-server/logs/
+    depends_on:
+      - mysql8.0
+
+
+
+
+
+
+
+
+networks:
+  backend:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.29.0.0/16
+          gateway: 172.29.0.1
