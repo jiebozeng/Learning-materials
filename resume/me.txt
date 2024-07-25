@@ -1,0 +1,93 @@
+Familiar with technology golang php typescript mysql mongodb redis kafka docker nginx linux git
+
+Work experience
+
+2024, 1 - now Shenzhen Jintaihua Network Technology Co., Ltd.
+
+Position Architect
+
+Responsible for the company's app, mini-program backend technical architecture, with tens of millions of users and a maximum QPS of 150,000.
+Adopting technology gin websocket mysql kafka redis docker nginx proxy cluster.
+
+2022, 3 - 2023, 12 Guangzhou Yide Network Technology Co., Ltd.
+
+Position Senior Golang Development Engineer
+
+Main project experience:
+
+Responsible for the development of the MetaCity (Metaverse) project, which is a 3D large-scale virtual game that simulates reality.
+In the Metaverse world, you can buy land, build houses, buy furniture, fight monsters, etc. Mainly responsible for:
+
+1. Code optimization, mysql, mongodb database optimization.
+
+2. Sub-service development, split and reorganize the original microservices.
+3. Module development for career, home, friends, chat, mining, team, data storage queue, etc.
+4. Train junior and intermediate backend colleagues.
+Performance:
+Performance appraisal is 90+ (100 points) every month, which is the best level.
+The main technologies used are golang, mongodb, redis, nats, docker
+
+2021, 8 - 2022, 3 Guangzhou Tianzong Network Technology Co., Ltd.
+
+Position Senior Golang Development Engineer
+
+Main project experience:
+Participate in the backend development of the mobile game Guarding the Mountains and Seas.
+Guarding the Mountains and Seas is a multiplayer online mobile game, which is exclusively distributed by Xiaomi in China. The gameplay is tower defense + strategy.
+I am responsible for developing some systems and assisting the main program to do a good job in system architecture and performance optimization,.
+such as: World BOSS, Liangyi Fighting, God Array Map, Xutian Baoding, Limited Time Leader, Cross-server Flying Sword Conference Competition, MySQL optimization,
+and communication optimization between coroutines, microservice module extraction.
+The main technologies used are golang, kafka, mysql, grpc
+
+Worked at Guangzhou Qiankexing Network Technology Co., Ltd. from 2015 to 2021
+
+Position Founder and Technical Director
+
+The second startup company mainly produces medium and light games, and the maximum number of people in the company is 15.
+
+Main project experience:
+
+1. Touch Her Heart, a medium-to-light casual mobile game. The project was completed by me alone, and the front and back ends were written together.
+Since the game does not require real-time interaction, the back end only uses short links, and gin (golang) + mysql was used to do it.
+GP game downloads exceeded 10 million, the data volume is large, and the technical difficulty lies in mysql optimization.
+
+2. Fish Fish Grow Up, a medium-to-light casual mobile game. A mobile game similar to the ball battle.
+Mainly responsible for back-end development, the technology uses gin (golang) + mysql + redis.
+
+3. Build a company user data analysis system to analyze user activity, retention, behavioral preferences, props sales, etc. The technology used is php + mysql + redis
+4. Manage the company's server (Linux), including environment construction, project deployment, data backup and migration, etc.
+
+2010-2015 Guangzhou Kuaiyou Network Co., Ltd.
+
+Position Main founder and back-end developer
+
+Main project experience:
+
+1. Fantasy Three Kingdoms RPG web game. Mainly responsible for back-end development and front-end task system development.
+The back-end online part uses java + netty. Data and logic use php + mysql. QQ space and 4399 are both online.
+
+2. Zuiyou Three Kingdoms RPG web game. Responsible for back-end development, using java + netty technology, php + mysql as auxiliary.
+The game was launched on the 4399 platform, with about 2,500 people online at the same time on a single server, in a rolling server mode.
+
+3. Build a company user data analysis system to analyze user activity, retention, behavioral preferences, props sales, etc. The technology used is php + mysql
+
+4. Responsible for company recruitment and team building. The maximum number of people in the company is up to 25.
+
+2009-2010 Guangzhou Zhongzhi Technology Co., Ltd.
+
+Position Software Engineer
+
+Job Description: Educational game development, participating in the front-end development of educational game products.
+During the work period, I mainly developed some simple stand-alone educational games. The more difficult ones were simulation circuit games,
+and the circuit algorithms were more difficult. I was also responsible for the development of the company's small game framework.
+
+Educational Background
+
+Graduated from Guangdong University of Technology in 2009. Major: Computer Science and Technology
+
+During college, I received the second-class academic scholarship and the second-class comprehensive scholarship in most semesters, and the third-class scholarship
+in some semesters, and joined the party in my sophomore year.
+
+Self-evaluation
+
+I like reading, hard work, active and responsible, know how to prioritize things, have a pioneering spirit, and be punctual.
