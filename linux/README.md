@@ -45,4 +45,29 @@ service crond restart
 重载
 service crond reload
 
+cp linux to linux
+scp ssgf_smain root@192.168.0.226:/opt/app/ssgf_smain8100/
+
+run other linux shell
+ssh root@192.168.0.138 "/opt/app/real_kill.sh"
+
+update and run 
+
+#!/bin/bash
+echo "-------kill ssgf_admin-------"
+str=`ps aux | grep "ssgf_admin" | grep -v grep | awk '{print $2}'`
+kill -15 $str
+if ["$?" -eq 0];then
+echo "kill success"
+else
+echo "kill failed"
+fi
+cd ssgfadmin
+git pull
+echo "------begin build ssgf_admin------"
+go build -o ../ssgf_admin main.go
+echo "------begin run ssgf_admin------"
+
+nohup ../ssgf_admin > ../ssgf_admin.log 2>&1 &
+echo "------run ssgf_admin success------"
 
