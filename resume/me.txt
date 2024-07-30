@@ -1,4 +1,4 @@
-Familiar with technology golang php typescript mysql mongodb redis kafka docker nginx linux git
+Familiar with technology golang php phyton typescript mysql mongodb redis kafka docker nginx linux git
 
 Work experience
 
@@ -6,7 +6,7 @@ Work experience
 
 Position Architect
 
-Responsible for the company's app、mini-program、web backend technical architecture, with tens of millions of users and a maximum QPS of 150,000.
+Responsible for the company's app、mini-program、web backend technical architecture, with tens of millions of users and a maximum QPS of 15000.
 Adopting technology gin websocket mysql kafka redis docker nginx proxy cluster.
 
 2022, 3 - 2023, 12 Guangzhou Yide Network Technology Co., Ltd.
