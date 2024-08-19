@@ -77,3 +77,6 @@ https://github.com/pure-admin/vue-pure-admin
 https://github.com/xiangyuecn/AreaCity-JsSpider-StatsGov?tab=readme-ov-file
 
 https://github.com/OdysseusYuan/LKY_OfficeTools
+
+The high-performance Swiss Army Knife for building redis-protocol compatible servers/services:
+https://github.com/bsm/redeo  
