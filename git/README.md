@@ -25,3 +25,7 @@ git push origin master
 删除临时分支 
 
 git branch -d temp
+
+查看日志
+
+git reflog --date=iso|grep pull
